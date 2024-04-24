@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=4a7e431f8c5e17695d8a854a08c8f746"></script>
+    <script type="text/javascript">
+        var map = new AMap.Map('container', {
+            center: [117.000923, 36.675807],
+            zoom: 11
+        });
+    </script>
+    <script type="text/javascript">
+        window.init = function () {
+            var map = new AMap.Map('container', {
+                center: [117.000923, 36.675807],
+                zoom: 11
+            });
+        }
+    </script>
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=4a7e431f8c5e17695d8a854a08c8f746&callback=init"></script>
+
+</head>
+
+<body>
+    <div id="container" style="width:500px; height:300px">var map = new AMap.Map('container',{
+        zoom: 10, //设置地图显示的缩放级别
+        center: [116.397428, 39.90923],//设置地图中心点坐标
+        layers: [new AMap.TileLayer.Satellite()], //设置图层,可设置成包含一个或多个图层的数组
+        mapStyle: 'amap://styles/whitesmoke', //设置地图的显示样式
+        viewMode: '2D', //设置地图模式
+        lang:'zh_cn', //设置地图语言类型
+        });
+
+    </div>
+
+
+
+    <script type="text/javascript">
+        window.init = function () {
+            var map = new AMap.Map('container', {
+                mapStyle: 'amap://styles/macaron', //设置地图的显示样式
+                center: [117.000923, 36.675807],
+                zoom: 11
+            });
+        }
+    </script>
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=4a7e431f8c5e17695d8a854a08c8f746&callback=init"></script>
+
+    <script type="text/javascript">
+        var map = new AMap.Map('container', {
+            zoom: 12,
+            center: [116.39, 39.9]
+        });
+
+        AMap.plugin('AMap.ToolBar', function () {//异步加载插件
+            var toolbar = new AMap.ToolBar();
+            map.addControl(toolbar);
+        });
+
+    </script>
+    <script type="text/javascript">
+        var map = new AMap.Map('container', {
+            zoom: 12,
+            center: [116.39, 39.9]
+        });
+
+        AMap.plugin(['AMap.ToolBar', 'AMap.Driving'], function () {//异步同时加载多个插件
+            var toolbar = new AMap.ToolBar();
+            map.addControl(toolbar);
+            var driving = new AMap.Driving();//驾车路线规划
+            driving.search(/*参数*/)
+        });
+    </script>
+</body>
+
+
+
+</html>
